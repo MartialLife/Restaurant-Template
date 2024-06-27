@@ -1,0 +1,54 @@
+// navbar script
+let navbar = document.getElementById("navbar");
+let hero = document.getElementById("hero");
+let menu = document.getElementById("menu");
+let menuLable = document.getElementById("menuLable");
+    
+window.onscroll = function() {
+    if(window.scrollY >= hero.offsetTop) {
+        navbar.classList.add("sticky");
+        menuLable.classList.remove("hide");
+        menuLable.classList.add("show");
+    }
+    else {
+        navbar.classList.remove("sticky");
+        menuLable.classList.remove("show");
+        menuLable.classList.add("hide");
+    }
+}
+
+// mission, vision, approach code for tabs
+let missiontab = document.getElementById("mission");
+let visiontab = document.getElementById("vision");
+let approachtab = document.getElementById("approach");
+let missionContent = document.getElementById("missionContent");
+let visionContent = document.getElementById("visionContent");
+let approachContent = document.getElementById("approachContent");
+
+let showMission = () => {
+    missiontab.classList.add("active");
+    visiontab.classList.remove("active");
+    approachtab.classList.remove("active");
+    missionContent.classList.remove("hideContent");
+    visionContent.classList.add("hideContent");
+    approachContent.classList.add("hideContent");
+}
+
+let showVision = () => {
+    missiontab.classList.remove("active");
+    visiontab.classList.add("active");
+    approachtab.classList.remove("active");
+    missionContent.classList.add("hideContent");
+    visionContent.classList.remove("hideContent");
+    approachContent.classList.add("hideContent");
+}
+
+let showApproach = () => {
+    missiontab.classList.remove("active");
+    visiontab.classList.remove("active");
+    approachtab.classList.add("active");
+    missionContent.classList.add("hideContent");
+    visionContent.classList.add("hideContent");
+    approachContent.classList.remove("hideContent");
+}
+
